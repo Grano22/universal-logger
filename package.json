@@ -1,0 +1,32 @@
+{
+  "name": "universal-logger",
+  "author": "grano22",
+  "description": "Universal logger is a library designed for collect and process logs in apps",
+  "license": "Apache-2.0",
+  "version": "0.0.1",
+  "type": "module",
+  "keywords": [
+    "logs",
+    "logger",
+    "incidents"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "main": "./src/FlaggerFeaturesManager.ts",
+  "module": "./src/FlaggerFeaturesManager.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "events": "^3.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  }
+}
