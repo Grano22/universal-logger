@@ -1,5 +1,5 @@
 export default interface LoggerOptions {
-    name : string;
+    readonly name?: string;
     handlers?: any[];
     timezone? : any;
 

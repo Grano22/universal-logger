@@ -30,13 +30,13 @@ export default class Logger implements LoggerInterface {
 
     constructor({
         name
-    } : LoggerOptions)
+    } : LoggerOptions = {})
     {
         this.#emitter = new LoggerEmitter();
-        this.#name = name;
+        this.#name = name || 'anonymous-logger';
     }
 
-    public fromException(exception: Error | any): void
+    public addFromException(exception: Error | any): void
     {
         this.error(
             exception.message + ' captured in ' +
@@ -136,7 +136,7 @@ export default class Logger implements LoggerInterface {
     /**
      * Register listener
      */
-    public registerListener(eventName : string, listener : () => void) : void
+    public registerListener(eventName : string, listener : (...args: any[]) => (void | Promise<void>)) : void
     {
         this.#emitter.on(eventName, listener);
     }
@@ -150,7 +150,7 @@ export default class Logger implements LoggerInterface {
     ) {
         const newExtension = new extensionClass(extensionConfig);
         this.#extensions[newExtension.name] = newExtension;
-        const extensionMethods = newExtension.register(this);
+        const extensionMethods = newExtension.register(this, extensionConfig);
         Object.defineProperty(this, newExtension.name, {
             value:extensionMethods,
             writable:false,

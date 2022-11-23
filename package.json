@@ -1,5 +1,5 @@
 {
-  "name": "universal-logger",
+  "name": "loggish",
   "author": "grano22",
   "description": "Universal logger is a library designed for collect and process logs in apps",
   "license": "Apache-2.0",
@@ -14,18 +14,24 @@
     "src",
     "dist"
   ],
-  "main": "./src/FlaggerFeaturesManager.ts",
-  "module": "./src/FlaggerFeaturesManager.ts",
+  "main": "./src/Logger.ts",
+  "module": "./src/Logger.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "NODE_ENV=test jest --config=jest.config.ts"
   },
   "dependencies": {
     "@types/node": "^18.11.9",
     "events": "^3.3.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.3.1",
+    "@types/jest": "^29.2.3",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
   }

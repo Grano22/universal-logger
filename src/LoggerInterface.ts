@@ -1,9 +1,11 @@
+import LogRecord from "./LogRecord";
+
 export default interface LoggerInterface
 {
     /**
      * Make log from exception
      */
-    fromException(exception: Error | any);
+    addFromException(exception: Error | any): void;
 
     /**
      * System is unusable

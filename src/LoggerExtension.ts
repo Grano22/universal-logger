@@ -1,6 +1,6 @@
-export default interface LoggerExtension
+export default interface LoggerExtension extends Object
 {
     readonly name : string;
 
-    register(loggerAccessor) : Record<string, any>;
+    register(loggerAccessor: any, extensionConfig: any) : Record<string, any>;
 }

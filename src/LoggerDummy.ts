@@ -2,7 +2,7 @@ import LoggerInterface from "./LoggerInterface";
 
 export default class LoggerDummy implements LoggerInterface
 {
-    fromException(exception: any) {
+    addFromException(exception: any) {
         
     }
 
